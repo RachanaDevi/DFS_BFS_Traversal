@@ -73,8 +73,7 @@ void graph::BFS()
 			
 			q.push(temp->info);
 			visited[temp->info]=1;
-			//temp=temp->next;
-			  flag=1;
+			flag=1;
 		    }
 		 
 		   temp=temp->next;
@@ -113,11 +112,11 @@ void graph::DFS()
 		temp=temp->next;
 	}
 	
-	    if(!s.empty()&&flag==0 ) //you just made this change
+	    if(!s.empty()&&flag==0 ) 
 		{
 			v=s.top();
 			s.pop();
-		//	break;
+		
 		}
 	
     }while(!s.empty());
@@ -143,17 +142,8 @@ void graph::create()
 			if((ans=='y'|| ans=='Y' )&& i!=j) 
 			{
 				newnode=new node(j);
-				/*if(list[i]==NULL)
-				{
-					list[i]=temp=new node(i+1);
-					
-				}*/
-				//else
-				//{
-					temp->next=newnode;
-					temp=newnode;
-				//}
-				
+				temp->next=newnode;
+				temp=newnode;	
 			}
 		}
 	}
@@ -167,7 +157,7 @@ void graph::display()
 	     temp=list[i];
 	     while(temp!=NULL)
 	     {
-	     //	temp->visited=0;
+	    
 	     	cout<<temp->info<<"->";
 	     	temp=temp->next;
 	     	
